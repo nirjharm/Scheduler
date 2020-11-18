@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<style>
+		.axis-line
+        {
+           box-sizing: border-box;
+           background-color:black;    
+           border:1px solid black;   
+        }
+        .grid-line
+        {
+           box-sizing: border-box;
+           background-color:white;    
+           border:0.5px dashed rgb(172, 172, 172);   
+        }
+        .div-1
+        {
+           box-sizing: border-box;
+           background: repeating-linear-gradient(
+                         -45deg,
+                         #606dbc,
+                         #606dbc 10px,
+                         #465298 10px,
+                         #465298 20px
+                        );
+           border:2px solid black;
+           text-align: center;    
+
+        }
+        .div-1 .tooltiptext {
+             opacity: 0;
+             min-width: 100%;
+             white-space: nowrap;
+             background-color: rgb(147, 211, 233);
+             color: #000;
+             text-align: center;
+             border-radius: 6px;
+             padding: 5px 5px;
+             position: absolute;
+             z-index: -1;
+             bottom: 120%;
+             left: 0%;
+             margin-left: 0px;
+         }
+
+         .div-1 .tooltiptext::after {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 10%;
+             margin-left: -5px;
+             border-width: 5px;
+             border-style: solid;
+             border-color: rgb(147, 211, 233) transparent transparent transparent;
+         }
+
+
+        .div-1:hover
+        {
+           background: repeating-linear-gradient(
+                         -45deg,
+                         #9197c0,
+                         #9197c0 10px,
+                         #59639c 10px,
+                         #59639c 20px
+                        );
+        }
+	 .div-1:hover .tooltiptext
+        {
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .div0
+        {
+           box-sizing: border-box;
+           background-color:rgb(147, 211, 233);
+           border:2px solid black;
+           text-align: center;           
+        }
+        .div0 .tooltiptext {
+             opacity: 0;
+             min-width: 100%;
+             white-space: nowrap;
+             background-color: rgb(147, 211, 233);
+             color: #000;
+             text-align: center;
+             border-radius: 6px;
+             padding: 5px 5px;
+             position: absolute;
+             z-index: -1;
+             bottom: 120%;
+             left: 0%;
+             margin-left: 0px;
+         }
+
+         .div0 .tooltiptext::after {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 10%;
+             margin-left: -5px;
+             border-width: 5px;
+             border-style: solid;
+             border-color: rgb(147, 211, 233) transparent transparent transparent;
+         }
+
+        .div0:hover
+        {
+            background-color:rgb(195, 221, 230);
+        }
+        .div0:hover .tooltiptext
+        {
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+
+        .div1
+        {
+       	   box-sizing: border-box;
+           background-color:rgb(248, 118, 104);
+           border:2px solid black;
+           text-align: center;           
+        }
+        .div1 .tooltiptext {
+             opacity: 0;
+             white-space: nowrap;
+             min-width: 100%;
+             background-color: rgb(248, 118, 104);
+             color: #fff;
+             text-align: center;
+             border-radius: 6px;
+             padding: 5px 5px;
+             position: absolute;
+             z-index: -1;
+             bottom: 105%;
+             left: 0%;
+             margin-left: 0px;
+         }
+         .div1 .tooltiptext::after {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 10%;
+             margin-left: -5px;
+             border-width: 5px;
+             border-style: solid;
+             border-color: rgb(248, 118, 104) transparent transparent transparent;
+         }
+
+         .div1:hover
+         {
+             background-color:rgb(247, 196, 196);
+         }
+         .div1:hover .tooltiptext
+         {
+            z-index: 1;
+             opacity: 0.9;
+         }
+    </style>
+</head>
+
+<body >
+
+<div id="grid" ></div>
+<!---Grid-->
+<script>
+    var x ="", i;
+    for (i=5; i<=95; i+=2) {
+      x = x + "<div class=\"grid-line\" id=\"rectangle\" style=\"position:absolute; top:10vh; left:" + i + "vw; width:1px; height:85vh\"></div>";
+      if(i>=10)
+        x = x + "<div class=\"grid-line\" id=\"rectangle\" style=\"position:absolute; top:"+ i +"vh; left:5vw; width:90vw; height:1px\"></div>";
+    }
+    document.getElementById("grid").innerHTML += x;
+</script>
+
+<div style="position:absolute; top:95vh; left:4.5vw;">0</div>
+<div style="position:absolute; top:95vh; left:49vw;">Time</div>
+
+<!---Axis-->
+<div class="axis-line" id="rectangle" style="position:absolute; top:10vh; left:5vw; width:1px; height:85vh"></div>
+<div class="axis-line" id="rectangle" style="position:absolute; top:95vh; left:5vw; width:90vw; height:1px"></div>
+
+<div class="div1" id="rectangle"  style="position:absolute; top:56vh; left:5vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1001 of Task 3<br>Job Start Time : 0.000000<br>Job Completion : 0.800000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:56vh; left:11vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task3<br>Context Switch Started at : 0.800000<br>Context Switch Ended at : 0.900000</span></div>
+<div class="div0" id="rectangle"  style="position:absolute; top:14vh; left:5vw; width:10.5vw; height:14vh"><span class="tooltiptext">Job 1 of Task 1<br>Job Start Time : 0.000000<br>Job Completion : 1.400000<br>On Processor : 1</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:14vh; left:15.5vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task1<br>Context Switch Started at : 1.400000<br>Context Switch Ended at : 1.500000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:77vh; left:11.75vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1002 of Task 4<br>Job Start Time : 0.900000<br>Job Completion : 1.700000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:77vh; left:17.75vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task4<br>Context Switch Started at : 1.700000<br>Context Switch Ended at : 1.800000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:56vh; left:27.5vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1003 of Task 3<br>Job Start Time : 3.000000<br>Job Completion : 3.800000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:56vh; left:33.5vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task3<br>Context Switch Started at : 3.800000<br>Context Switch Ended at : 3.900000</span></div>
+<div class="div0" id="rectangle"  style="position:absolute; top:35vh; left:16.25vw; width:18vw; height:14vh"><span class="tooltiptext">Job 2 of Task 2<br>Job Start Time : 1.500000<br>Job Completion : 3.900000<br>On Processor : 1</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:35vh; left:34.25vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task2<br>Context Switch Started at : 3.900000<br>Context Switch Ended at : 4.000000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:77vh; left:35vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1004 of Task 4<br>Job Start Time : 4.000000<br>Job Completion : 4.800000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:77vh; left:41vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task4<br>Context Switch Started at : 4.800000<br>Context Switch Ended at : 4.900000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:56vh; left:50vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1005 of Task 3<br>Job Start Time : 6.000000<br>Job Completion : 6.800000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:56vh; left:56vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task3<br>Context Switch Started at : 6.800000<br>Context Switch Ended at : 6.900000</span></div>
+<div class="div0" id="rectangle"  style="position:absolute; top:14vh; left:57.5vw; width:10.5vw; height:14vh"><span class="tooltiptext">Job 3 of Task 1<br>Job Start Time : 7.000000<br>Job Completion : 8.400000<br>On Processor : 1</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:14vh; left:68vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task1<br>Context Switch Started at : 8.400000<br>Context Switch Ended at : 8.500000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:77vh; left:65vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1006 of Task 4<br>Job Start Time : 8.000000<br>Job Completion : 8.800000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:77vh; left:71vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task4<br>Context Switch Started at : 8.800000<br>Context Switch Ended at : 8.900000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:56vh; left:72.5vw; width:6vw; height:14vh"><span class="tooltiptext">Job 1007 of Task 3<br>Job Start Time : 9.000000<br>Job Completion : 9.800000<br>On Processor : 2</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:56vh; left:78.5vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task3<br>Context Switch Started at : 9.800000<br>Context Switch Ended at : 9.900000</span></div>
+<div class="div0" id="rectangle"  style="position:absolute; top:35vh; left:68.75vw; width:18vw; height:14vh"><span class="tooltiptext">Job 4 of Task 2<br>Job Start Time : 8.500000<br>Job Completion : 10.900000<br>On Processor : 1</span></div>
+<div class="div-1" id="rectangle"  style="position:absolute; top:35vh; left:86.75vw; width:0.75vw; height:14vh"><span class="tooltiptext">Context Switch from Task2<br>Context Switch Started at : 10.900000<br>Context Switch Ended at : 11.000000</span></div>
+<div class="div1" id="rectangle"  style="position:absolute; top:56vh; left:95vw; width:0vw; height:14vh"><span class="tooltiptext">Job 1008 of Task 3<br>Job Start Time : 12.000000<br>Job Completion : 12.000000<br>On Processor : 2</span></div>
+<div style="position:absolute; top:95vh; left:94.5vw;">12</div>
+<div style="position:absolute; top:21vh; left:1vw;">Task 1</div>
+<div style="position:absolute; top:42vh; left:1vw;">Task 2</div>
+<div style="position:absolute; top:63vh; left:1vw;">Task 3</div>
+<div style="position:absolute; top:84vh; left:1vw;">Task 4</div>

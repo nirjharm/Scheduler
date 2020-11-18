@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<style>
+		.axis-line
+        {
+           box-sizing: border-box;
+           background-color:black;    
+           border:1px solid black;   
+        }
+        .grid-line
+        {
+           box-sizing: border-box;
+           background-color:white;    
+           border:0.5px dashed rgb(172, 172, 172);   
+        }
+        .div-1
+        {
+           box-sizing: border-box;
+           background: repeating-linear-gradient(
+                         -45deg,
+                         #606dbc,
+                         #606dbc 10px,
+                         #465298 10px,
+                         #465298 20px
+                        );
+           border:2px solid black;
+           text-align: center;    
+
+        }
+        .div-1 .tooltiptext {
+             opacity: 0;
+             min-width: 100%;
+             white-space: nowrap;
+             background-color: rgb(147, 211, 233);
+             color: #000;
+             text-align: center;
+             border-radius: 6px;
+             padding: 5px 5px;
+             position: absolute;
+             z-index: -1;
+             bottom: 120%;
+             left: 0%;
+             margin-left: 0px;
+         }
+
+         .div-1 .tooltiptext::after {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 10%;
+             margin-left: -5px;
+             border-width: 5px;
+             border-style: solid;
+             border-color: rgb(147, 211, 233) transparent transparent transparent;
+         }
+
+
+        .div-1:hover
+        {
+           background: repeating-linear-gradient(
+                         -45deg,
+                         #9197c0,
+                         #9197c0 10px,
+                         #59639c 10px,
+                         #59639c 20px
+                        );
+        }
+	 .div-1:hover .tooltiptext
+        {
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .div0
+        {
+           box-sizing: border-box;
+           background-color:rgb(147, 211, 233);
+           border:2px solid black;
+           text-align: center;           
+        }
+        .div0 .tooltiptext {
+             opacity: 0;
+             min-width: 100%;
+             white-space: nowrap;
+             background-color: rgb(147, 211, 233);
+             color: #000;
+             text-align: center;
+             border-radius: 6px;
+             padding: 5px 5px;
+             position: absolute;
+             z-index: -1;
+             bottom: 120%;
+             left: 0%;
+             margin-left: 0px;
+         }
+
+         .div0 .tooltiptext::after {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 10%;
+             margin-left: -5px;
+             border-width: 5px;
+             border-style: solid;
+             border-color: rgb(147, 211, 233) transparent transparent transparent;
+         }
+
+        .div0:hover
+        {
+            background-color:rgb(195, 221, 230);
+        }
+        .div0:hover .tooltiptext
+        {
+            z-index: 1;
+            opacity: 0.9;
+        }
+
+/*CopyFromHere*/
+        .div1
+        {
+       	   box-sizing: border-box;
+           background-color:rgb(248, 118, 104);
+           border:2px solid black;
+           text-align: center;           
+        }
+        .div1 .tooltiptext {
+             opacity: 0;
+             white-space: nowrap;
+             min-width: 100%;
+             background-color: rgb(248, 118, 104);
+             color: #fff;
+             text-align: center;
+             border-radius: 6px;
+             padding: 5px 5px;
+             position: absolute;
+             z-index: -1;
+             bottom: 105%;
+             left: 0%;
+             margin-left: 0px;
+         }
+         .div1 .tooltiptext::after {
+             content: "";
+             position: absolute;
+             top: 100%;
+             left: 10%;
+             margin-left: -5px;
+             border-width: 5px;
+             border-style: solid;
+             border-color: rgb(248, 118, 104) transparent transparent transparent;
+         }
+
+         .div1:hover
+         {
+             background-color:rgb(247, 196, 196);
+         }
+         .div1:hover .tooltiptext
+         {
+            z-index: 1;
+             opacity: 0.9;
+         }
+/*CopyTillHere*/
+
+
+
+/*CopyToHere and change all div1 to div2 to add another processor support*/
+
+
+
+
+
+    </style>
+</head>
+
+<body >
+
+<div id="grid" ></div>
+<!---Grid-->
+<script>
+    var x ="", i;
+    for (i=5; i<=95; i+=2) {
+      x = x + "<div class=\"grid-line\" id=\"rectangle\" style=\"position:absolute; top:10vh; left:" + i + "vw; width:1px; height:85vh\"></div>";
+      if(i>=10)
+        x = x + "<div class=\"grid-line\" id=\"rectangle\" style=\"position:absolute; top:"+ i +"vh; left:5vw; width:90vw; height:1px\"></div>";
+    }
+    document.getElementById("grid").innerHTML += x;
+</script>
+
+<div style="position:absolute; top:95vh; left:4.5vw;">0</div>
+<div style="position:absolute; top:95vh; left:49vw;">Time</div>
+
+<!---Axis-->
+<div class="axis-line" id="rectangle" style="position:absolute; top:10vh; left:5vw; width:1px; height:85vh"></div>
+<div class="axis-line" id="rectangle" style="position:absolute; top:95vh; left:5vw; width:90vw; height:1px"></div>
+
