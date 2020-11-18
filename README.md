@@ -1,7 +1,5 @@
 # Scheduler
 
-# Comp 737 Project
-# Nirjhar Mukherjee
 # Introduction
 
 This project aims to provide a set of tools to create task sets, execute them using a discrete
