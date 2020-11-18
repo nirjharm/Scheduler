@@ -15,8 +15,8 @@ int main(void)
 	
 
 	int processors = 2;
-	int ntasks = 2; //perprocessor
-	double maxutilization = 0.8; //perprocessor
+	int ntasks = 5; //perprocessor
+	double maxutilization = 0.9; //perprocessor
 	double minutilization = 0.2; //perprocessor
 
 	cout << ntasks*processors <<"\t" << hp << "\t" << processors << endl;
@@ -37,7 +37,7 @@ int main(void)
 			do{
 				exec = (rand()*rand()) % x;
 				exec/=10;
-			}while(exec <= 0.1);
+			}while(exec <= 0.0);
 		}while (!( (exec/(double)p) < maxutilization/(double)ntasks && (exec/(double)p) > minutilization/(double)ntasks));
 		exec *= m;
 		p *= m;
