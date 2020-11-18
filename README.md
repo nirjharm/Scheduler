@@ -26,7 +26,5 @@ Finally, run:
 
 **./run.sh inputX** // to draw the schedule for the Xth imput file, for eg: ./run.sh input
 
-*Not inputfiles/input0, just the name of the schedule in the inputfiles folder, it can be xyzad
-for all it cares
-
+*Not inputfiles/inputX, just the name of the schedule in the inputfiles folder, inputX
 And then just open the Result.html created
