@@ -11,7 +11,6 @@ int main(void)
 	srand(time(0)); 
  	int m = 1;
 	int hp = 12 * m;
-	double u = 0;	
 
 	
 
@@ -40,7 +39,8 @@ int main(void)
 				exec/=10;
 			}while(exec <= 0.1);
 		}while (!( (exec/(double)p) < maxutilization/(double)ntasks && (exec/(double)p) > minutilization/(double)ntasks));
-
+		exec *= m;
+		p *= m;
 		cout << exec << "\t" << p << "\t" << j << endl;
 
 	}
