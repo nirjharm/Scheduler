@@ -1,11 +1,7 @@
 # Scheduler
 
 # Comp 737 Project
-
 # Nirjhar Mukherjee
-
-# https://github.com/nirjharm/Scheduler
-
 # Introduction
 
 This project aims to provide a set of tools to create task sets, execute them using a discrete
